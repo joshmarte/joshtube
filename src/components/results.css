@@ -1,0 +1,12 @@
+#results-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.link-title {
+  text-decoration: none;
+  color: black;
+  font-size: large;
+}

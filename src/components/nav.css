@@ -1,0 +1,20 @@
+#nav-container {
+  background-color: red;
+  color: white;
+  width: 100%;
+  height: 65px;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 25px;
+}
+
+div #yt {
+  font-size: 25px;
+}
+ul {
+  padding: 10px;
+  margin: 0 auto;
+}

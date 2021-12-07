@@ -1,0 +1,25 @@
+#form-container {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  height: 52px;
+  border-radius: 3px;
+  border: 1px solid grey;
+  padding: 0;
+  font-size: large;
+  box-sizing: border-box;
+}
+
+#submit-bttn {
+  background-color: crimson;
+  color: white;
+  width: 120px;
+}
+
+#search-input {
+  padding-left: 15px;
+  width: 700px;
+}

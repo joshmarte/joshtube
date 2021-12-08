@@ -5,6 +5,7 @@ import "./App.css";
 import Nav from "./components/Nav";
 import Results from "./components/Results";
 import Search from "./components/Search";
+import Video from "./components/Video";
 
 require("dotenv").config();
 
@@ -40,7 +41,6 @@ class App extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
     this.fetchData();
   };
 
@@ -57,11 +57,15 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
           value={this.state.searchTerm}
         />
-        {!this.state.results ? (
-          noResults
-        ) : (
-          <Results results={this.state.apiResults} />
-        )}
+        <Routes>
+          <Route exact path="/" element={noResults} />
+          <Route path="/about" />
+          <Route
+            path="/videos"
+            element={<Results results={this.state.apiResults} />}
+          />
+          <Route path="/videos/:id" element={<Video />} />
+        </Routes>
       </div>
     );
   }

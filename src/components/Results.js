@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link, Routes, Route } from "react-router-dom";
 import "./results.css";
-import Video from "./Video";
 
 export default class Results extends Component {
   constructor() {
@@ -17,7 +16,7 @@ export default class Results extends Component {
               src={item.snippet.thumbnails.high.url}
               alt="video"
               height="325"
-              width="500"
+              width="450"
             />
           </div>
           <Link to={`/videos/${item.id.videoId}`} className="link-title">
@@ -27,13 +26,6 @@ export default class Results extends Component {
       );
     });
 
-    return (
-      <div id="results-container">
-        <Routes>
-          <Route exact path="/" element={videoArray} />
-          <Route path="/videos/:id" element={<Video />} />
-        </Routes>
-      </div>
-    );
+    return <div id="results-container">{videoArray}</div>;
   }
 }

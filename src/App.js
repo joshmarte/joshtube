@@ -39,32 +39,31 @@ class App extends Component {
     });
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    this.fetchData();
-  };
-
   render() {
-    let noResults = (
-      <div id="blank">No Search Results Yet! Please submit a search Above!</div>
-    );
-
     return (
       <div className="app">
         <Nav />
-        <Search
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-          value={this.state.searchTerm}
-        />
+
         <Routes>
-          <Route exact path="/" element={noResults} />
-          <Route path="/about" />
           <Route
-            path="/videos"
-            element={<Results results={this.state.apiResults} />}
-          />
+            exact
+            path="/"
+            element={
+              <Search
+                handleChange={this.handleChange}
+                fetch={this.fetchData}
+                value={this.state.searchTerm}
+                display={this.state.apiResults.length}
+              />
+            }
+          >
+            <Route
+              path="/videos"
+              element={<Results results={this.state.apiResults} />}
+            />
+          </Route>
           <Route path="/videos/:id" element={<Video />} />
+          <Route path="/about" />
         </Routes>
       </div>
     );

@@ -1,7 +1,7 @@
 html {
   line-height: 1.75;
   font-size: 20px;
-  width: 100%;
+  width: fit-content;
 }
 
 body {

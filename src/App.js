@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import Results from "./components/Results";
 import Search from "./components/Search";
 import Video from "./components/Video";
+import About from "./components/About";
 
 require("dotenv").config();
 
@@ -63,7 +64,7 @@ class App extends Component {
             />
           </Route>
           <Route path="/videos/:id" element={<Video />} />
-          <Route path="/about" />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     );
